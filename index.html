@@ -1,9 +1,117 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>My CSS Cheatsheet</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
 
-<body>
-  <h1>Ana</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
+<main>
+    <body>
+        <div>
+        <header class="header"><h1>
+            CSS SELECTORS
+        </h1>
+        </header>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr class="row">
+                        <th class="selector-head">Selector</th>
+                        <th class="name-head">Name</th>
+                        <th class="function-head">Function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row">
+                        <td class="selector"><span class=red>#</span></td>
+                        <td class="name">ID Selector</td>
+                        <td class="function">A unique ID assigned to an HTML element. <strong>Will overwrite other selectors</strong></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="selector"><span class="red">.</span></td>
+                        <td class="name">Class Selector</td>
+                        <td class="function">Selects all elements with <strong>class</strong> equal to the set value in the HTML code</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="selector"><span class="red">h1, h2</span></td>
+                        <td class="name">Group of Selectors</td>
+                        <td class="function">Selects <strong>several</strong> elements of the HTML code to edit with a CSS rule</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="selector"><span class="red">h3.section-heading</span></td>
+                        <td class="name">Chaining Selectors</td>
+                        <td class="function">CSS selectors can be chained so that rule sets apply only to elements that match all criteria. In this example the selector selects <span class="red">h3</span> elements with the <span class="green">section-heading</span> class. </td>
+                    </tr>
+                    <tr class="row">
+                        <td class="selector"><span class="red">p</span></td>
+                        <td class="name">Type Selector</td>
+                        <td class="function">CSS type selectors are used to match all elements of a given type or tag name. Unlike for HTML syntax, we do not include the angle brackets when using type selectors for tag names. When using type selectors, elements are matched <strong>regardless</strong> of their nesting level in the HTML. In this example it selects all <span class="red">&lt;h1&gt;</span> tags</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="selector"><span class="red">&lt;div</span> <span class="green">class</span>="value1 value2 value3"...<span class="red">&gt;&lt;/div&gt;</span></td>
+                        <td class="name">HTML attributes with multiple values</td>
+                        <td class="function">Some HTML attributes can have multiple attribute values. Multiple attribute values are separated <strong>by a space between each attribute.</strong></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="selector"><span class="red">h1#header</span> {<br>
+                        <span class="green">color</span>: blue;<br>
+                        } <span class="gray">/* implemented */</span><br>
+                        <br>
+                        <span class="red">h1</span> {<br>
+                        <span class="green">colo</span>: red;<br>
+                        } <span class="gray">/* Not implemented */</span></td>
+                        <td class="name">Selector Specificity</td>
+                        <td class="function">Specificity is a ranking system that is used when there are multiple conflicting property values that point to the same element. When determining which rule to apply, <strong>the selector with the highest specificity wins out.</strong> The most specific selector type is the <strong>ID selector</strong>, followed by <strong>class</strong> selectors, followed by <strong>type</strong> selectors. In this example, only <span class="green">color</span>: <span class="blue">blue</span> will be implemented as it has an ID selector whereas color: red has a type selector.</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="selector"><span class="red">div p</span> {<br>
+                            },<br>
+                            <br>
+                            <span class="red">section ol li</span> {<br>
+                            }</td>
+                        <td class="name">CSS descendant selector</td>
+                        <td class="function">The CSS descendant selector combinator is used to match elements that are <strong>descended</strong> from another matched selector. They are denoted by a <strong>single space between each selector and the descended selector</strong>. All matching elements are selected regardless of the nesting level in the HTML.</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="selector"><span class="red">&lt;link&gt;</span></td>
+                        <td class="name">Link Element</td>
+                        <td class="function">The <link> element is used to link HTML documents to external resources like CSS files. It commonly uses:
+                            <ul>
+                                <li><span class="green">href</span> attribute to specify the URL to the external resource</li>
+                                <li><span class="green">rel</span> attribute to specify the relationship of the linked document to the current document</li>
+                                <li><span class="green">type</span> attribute to define the type of content being linked</li>
+                            </ul></td>
+                    </tr>
+                    <tr class="row">
+                        <td class="selector"><span class="red">&lt;link</span> <span class="green">href</span>="style.css" <span class="green">type</span>="text/css" <span class="green">rel</span>="stylesheet"<span class="red">&gt;</span></td>
+                        <td class="name">Write CSS in separate files</td>
+                        <td class="function">CSS code can be written in its own files to keep it separate from the HTML code. The extension for CSS files is <strong>.css</strong>. These can be linked to an HTML file using a <span class="red">&lt;link&gt;</span> tag in the <span class ="red">&lt;head&gt;</span> section.</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="selector"><span class="red">&lt;head&gt;<br>
+                            &lt;style&gt;<br>
+                            h1 </span>{<br>
+                            <span class="green">color</span>: blue;<br>
+                            }<br>
+                            <span class="red">&lt;/style&gt;
+                            &lt;/head&gt;</span></td>
+                        <td class="name">Write CSS in HTML File</td>
+                        <td class="function">CSS code can be written in an HTML file by enclosing the code in <span class="red">&lt;style&gt</span> tags. Code surrounded by <span class="red">&lt;style&gt;</span> tags will be interpreted as CSS syntax.</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="selector"><span class="red">&lt;h2</span> <span class="green">style</span>="text-align: center;"<span class="red">&gt;</span>Centered Text<span class="red">&lt;/h2&gt;</span></td>
+                        <td class="name">Inline Styles</td>
+                        <td class="function">CSS styles can be directly added to HTML elements by using the <span class="green">style</span> attribute in the element’s opening tag. Each style declaration is ended with a <strong>semicolon</strong>. Styles added in this manner are known as inline styles.</td>
+                    </tr>
+                </tbody>
+                </thead>
+            </table>
+        </div>
+    </body>
+</main>
 
 </html>
